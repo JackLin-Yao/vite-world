@@ -1,16 +1,20 @@
 <template>
+  <el-container>
+    <el-aside width="250px">
+      <el-scrollbar height="100vh">
+        <AdminMenu />
+      </el-scrollbar>
+    </el-aside>
     <el-container>
-      <el-aside width="200px">
-      <AdminMenu/>
-      </el-aside>
-      <el-container>
-        <el-header>
-          <AdminHeader/>
-        </el-header>
-        <el-main>Main</el-main>
-      </el-container>
+      <el-header>
+        <AdminHeader />
+      </el-header>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
     </el-container>
-    
+  </el-container>
+
 </template>
 
 <script setup>
@@ -23,6 +27,7 @@ import AdminHeader from './components/AdminHeader.vue';
   height: 100vh;
   // weight: 100vh;
 }
+
 .el-header {
   background-color: #fff;
   color: #333;
@@ -30,11 +35,13 @@ import AdminHeader from './components/AdminHeader.vue';
   justify-content: space-between;
   align-items: center;
 }
+
 .el-aside {
-  // width: auto;
+  width: auto;
   background-color: #ffefef;
   color: #333;
 }
+
 .el-main {
   background-color: #e9eef3;
   color: #333;
