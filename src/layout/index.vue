@@ -7,13 +7,17 @@
       <el-header>
         <AdminHeader />
       </el-header>
-      <el-main>
-        <el-scrollbar height="100vh">
-          <tag-list></tag-list>
-          <router-view></router-view>
-        </el-scrollbar>
 
+
+      <el-main>
+        <tag-list></tag-list>
+
+        <el-scrollbar>
+          <router-view></router-view>
+
+        </el-scrollbar>
       </el-main>
+
     </el-container>
   </el-container>
 
@@ -50,5 +54,6 @@ import TagList from './components/TagList.vue';
   background-color: #f7fafc;
   color: #333;
   padding: 10px 0px 10px 10px !important;
+  overflow: hidden;
 }
 </style>

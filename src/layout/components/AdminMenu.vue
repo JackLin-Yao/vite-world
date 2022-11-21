@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <el-menu :collapse="isCollapse" default-active="2" class="el-menu-vertical-demo">
 
-      <menu-item></menu-item>
-    </el-menu>
-  </div>
+  <el-menu :collapse="isCollapse" default-active="2">
+    <span class="menu-logo">OA　|　鼎泰高科协同办公</span>
+    <menu-item></menu-item>
+  </el-menu>
+
 </template>
 
 <script setup>
@@ -25,8 +25,9 @@ const isCollapse = computed(() => {
 
 <style lang="scss" scoped>
 .el-menu {
-  height: 100vh;
+  height: 100%;
   text-align: center;
+  overflow: hidden;
 
   .menu-logo {
     display: inline-block;

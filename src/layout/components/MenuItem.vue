@@ -1,6 +1,5 @@
 <template>
-  <el-scrollbar height="100vh">
-    <span class="menu-logo">OA　|　鼎泰高科协同办公</span>
+  <el-scrollbar>
     <div v-for="item in 1000" :key="item">
       user
     </div>
