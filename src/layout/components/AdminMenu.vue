@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-menu :collapse="isCollapse" default-active="2" class="el-menu-vertical-demo">
-      <span class="menu-logo">OA　|　鼎泰高科协同办公</span>
+
       <menu-item></menu-item>
     </el-menu>
   </div>

@@ -1,8 +1,7 @@
 <template>
-  <div v-for="item in 1000" :key="item">
-    user
-  </div>
+  <div>
 
+  </div>
 </template>
 
 <script setup>

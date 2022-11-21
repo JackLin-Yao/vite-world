@@ -1,16 +1,18 @@
 <template>
   <el-container>
     <el-aside width="250px">
-      <el-scrollbar height="100vh">
-        <AdminMenu />
-      </el-scrollbar>
+      <AdminMenu />
     </el-aside>
     <el-container>
       <el-header>
         <AdminHeader />
       </el-header>
       <el-main>
-        <router-view></router-view>
+        <el-scrollbar height="100vh">
+          <tag-list></tag-list>
+          <router-view></router-view>
+        </el-scrollbar>
+
       </el-main>
     </el-container>
   </el-container>
@@ -20,12 +22,14 @@
 <script setup>
 import AdminMenu from './components/AdminMenu.vue';
 import AdminHeader from './components/AdminHeader.vue';
+import TagList from './components/TagList.vue';
 </script>
 
 <style lang="scss" scoped>
 .el-container {
   height: 100vh;
   // weight: 100vh;
+  /* overflow: hidden; */
 }
 
 .el-header {
@@ -43,7 +47,8 @@ import AdminHeader from './components/AdminHeader.vue';
 }
 
 .el-main {
-  background-color: #e9eef3;
+  background-color: #f7fafc;
   color: #333;
+  padding: 10px 0px 10px 10px !important;
 }
 </style>
