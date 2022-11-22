@@ -1,12 +1,17 @@
 <template>
-  <el-icon class="icons" @click="setCollapse">
-    <component :is="status ? Fold : Expand" />
-  </el-icon>
+  <div>
+    <el-icon class="icons" @click="setCollapse">
+      <component :is="status ? Fold : Expand" />
+    </el-icon>
+    <BreadCrumb></BreadCrumb>
+  </div>
+
 </template>
 
 <script setup>
 import { computed } from "vue";
 import { Fold, Expand } from "@element-plus/icons-vue";
+import BreadCrumb from './BreadCrumb.vue';
 import { useCollapseStore } from '@/stores/collapse';
 /**
  * 获取store
