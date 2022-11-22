@@ -1,6 +1,7 @@
 <template>
   <el-container>
     <el-aside width="250px">
+
       <AdminMenu />
     </el-aside>
     <el-container>
@@ -41,6 +42,7 @@ import TagList from './components/TagList.vue';
 }
 
 .el-aside {
+  /* height: 100vh; */
   width: auto;
   background-color: #ffefef;
   color: #333;
