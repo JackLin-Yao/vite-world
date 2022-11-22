@@ -1,7 +1,7 @@
 <template>
   <div class="nav-menu" :style="{ width: isCollapse ? '50px' : '250px' }">
     <span class="menu-logo">OA　|　鼎泰高科协同办公 </span>
-    <el-menu :collapse="isCollapse" :collapse-transition="false" unique-opened>
+    <el-menu :collapse="isCollapse" :collapse-transition="false" unique-opened :router="true">
       <menu-item></menu-item>
     </el-menu>
   </div>

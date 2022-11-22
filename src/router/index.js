@@ -9,32 +9,33 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/dashboard',
       component: () => import('@/layout/index.vue'),
       children: [
         {
           path: '/dashboard',
           name: 'dashboard',
+          redirect: '/',
           component: () => import('@/views/dashboard/index.vue')
-        }
+        },
+        {
+          path: '/system',
+          name: 'system',
+          component: () => import('@/layout/index.vue'),
+          children: [
+            ...systemRouter
+          ]
+        },
+        {
+          path: '/role',
+          name: 'role',
+          component: () => import('@/layout/index.vue'),
+          children: [
+            ...roleRouter
+          ]
+        },
       ]
     },
-    {
-      path: '/system',
-      name: 'system',
-      component: () => import('@/layout/index.vue'),
-      children: [
-        ...systemRouter
-      ]
-    },
-    {
-      path: '',
-      name: 'role',
-      component: () => import('@/layout/index.vue'),
-      children: [
-        ...roleRouter
-      ]
-    },
+
     {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',

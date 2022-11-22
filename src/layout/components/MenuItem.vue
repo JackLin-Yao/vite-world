@@ -29,93 +29,56 @@
 
 import { reactive } from 'vue'
 const menuList = reactive(
+
   [
     {
-      path: "/system",
-      component: "Layout",
-      name: "system",
+      path: '/dashboard',
+      name: 'dashboard',
+      component: '',
       meta: {
-        title: "系统管理",
-        icon: "Setting",
-        roles: ["sys:manage"],
+        title: '首页',
+        icon: 'Edit'
+      }
+    },
+
+    {
+      path: '/role',
+      name: 'role',
+      meta: {
+        title: '角色管理',
+        icon: 'Edit'
       },
+      component: '',
       children: [
         {
-          path: "/userList",
-          component: "/system/User/UserList",
-          name: "userList",
+          path: '/admin',
+          name: 'admin',
           meta: {
-            title: "员工管理",
-            icon: "UserFilled",
-            roles: ["sys:user"],
+            title: '管理员',
+            icon: 'Edit'
           },
         },
         {
-          path: "/roleList",
-          component: "/system/Role/RoleList",
-          name: "roleList",
+          path: '/user',
+          name: 'user',
           meta: {
-            title: "角色管理",
-            icon: "Wallet",
-            roles: ["sys:role"],
+            title: '用户',
+            icon: 'Edit'
           },
-        },
-        {
-          path: "/menuList",
-          component: "/system/Menu/MenuList",
-          name: "menuList",
-          meta: {
-            title: "菜单管理",
-            icon: "Menu",
-            roles: ["sys:menu"],
-          },
-        },
-      ],
+        }
+
+      ]
     },
     {
-      path: "/memberRoot",
-      component: "Layout",
-      name: "memberRoot",
+      path: '/system',
+      name: 'system',
       meta: {
-        title: "会员管理",
-        icon: "Setting",
-        roles: ["sys:memberRoot"],
+        title: '系统设置',
+        icon: 'Edit'
       },
-      children: [
-        {
-          path: "/cardType",
-          component: "/member/CardType",
-          name: "cardType",
-          meta: {
-            title: "会员卡类型",
-            icon: "UserFilled",
-            roles: ["sys:cardType"],
-          },
-        },
-        {
-          path: "/memberList",
-          component: "/member/MemberList",
-          name: "memberList",
-          meta: {
-            title: "会员管理",
-            icon: "Wallet",
-            roles: ["sys:memberList"],
-          },
-        },
-        {
-          path: "/myFee",
-          component: "/system/MyFee",
-          name: "myFee",
-          meta: {
-            title: "我的充值",
-            icon: "Menu",
-            roles: ["sys:myFee"],
-          },
-        },
-      ],
-    },
+      component: '',
+    }
   ]
-
 
 
 )

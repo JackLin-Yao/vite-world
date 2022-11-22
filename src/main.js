@@ -7,6 +7,8 @@ import 'normalize.css/normalize.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 
 const app = createApp(App)

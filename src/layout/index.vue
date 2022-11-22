@@ -10,7 +10,7 @@
       <el-main>
         <tag-list></tag-list>
         <el-scrollbar>
-          <router-view></router-view>
+          <!-- <router-view></router-view> -->
         </el-scrollbar>
       </el-main>
     </el-container>
