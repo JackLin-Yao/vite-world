@@ -1,7 +1,10 @@
 export default [
   {
-    path: '',
+    path: '/system',
     name: 'system',
-    component: () => import('../../views/system/index.vue')
+    component: () => import('../../views/system/index.vue'),
+    meta: {
+      title: '首页'
+    }
   }
 ]

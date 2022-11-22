@@ -6,20 +6,20 @@
           <el-icon>
             <component :is="item.meta.icon"></component>
           </el-icon>
-          <span>{{ item.name }}</span>
+          <span>{{ item.meta.title }}</span>
         </template>
-        <el-menu-item v-for="(item2, index2) in item.children" :key="index2" index="item.path">
+        <el-menu-item v-for="(item2, index2) in item.children" :key="index2" :index="item2.path">
           <el-icon>
             <component :is="item2.meta.icon"></component>
           </el-icon>
-          <span>{{ item2.name }}</span>
+          <span>{{ item2.meta.title }}</span>
         </el-menu-item>
       </el-sub-menu>
       <el-menu-item v-else :index="item.path">
         <el-icon>
           <component :is="item.meta.icon"></component>
         </el-icon>
-        <span>{{ item.name }}</span>
+        <span>{{ item.meta.title }}</span>
       </el-menu-item>
     </template>
   </el-scrollbar>
@@ -28,6 +28,7 @@
 <script setup>
 
 import { reactive } from 'vue'
+
 const menuList = reactive(
 
   [
@@ -42,7 +43,6 @@ const menuList = reactive(
     },
 
     {
-      path: '/role',
       name: 'role',
       meta: {
         title: '角色管理',

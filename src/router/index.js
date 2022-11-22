@@ -9,30 +9,28 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      redirect: '/dashboard',
       component: () => import('@/layout/index.vue'),
+      meta: {
+        title: '首页'
+      },
       children: [
         {
           path: '/dashboard',
           name: 'dashboard',
-          redirect: '/',
-          component: () => import('@/views/dashboard/index.vue')
+          component: () => import('@/views/dashboard/index.vue'),
+          meta: {
+            title: '首页'
+          }
         },
-        {
-          path: '/system',
-          name: 'system',
-          component: () => import('@/layout/index.vue'),
-          children: [
-            ...systemRouter
-          ]
-        },
+        ...systemRouter
+        ,
         {
           path: '/role',
           name: 'role',
           component: () => import('@/layout/index.vue'),
-          children: [
-            ...roleRouter
-          ]
         },
+        ...roleRouter
       ]
     },
 
