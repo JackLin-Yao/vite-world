@@ -1,6 +1,6 @@
 export default [
   {
-    path: 'system',
+    path: '',
     name: 'system',
     component: () => import('../../views/system/index.vue')
   }

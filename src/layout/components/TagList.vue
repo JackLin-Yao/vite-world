@@ -1,15 +1,31 @@
 <template>
-  <!-- <div class="f-tag-list" :style="{ left: $store.state.asideWidth }"> -->
-  <!-- 标签页部分 -->
-  <el-tabs>
-    <el-tab-pane>
-    </el-tab-pane>
-  </el-tabs>
-  <!-- </div> -->
+  <div>
+    <el-tabs v-model="editableTabsValue" type="card" closable>
+      <el-tab-pane v-for="item in editableTabs" :key="item.name" :label="item.title" :name="item.name">
 
+      </el-tab-pane>
+    </el-tabs>
+  </div>
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
+let tabIndex = 2
+const editableTabsValue = ref('2')
+const editableTabs = ref([
+  {
+    title: 'Tab 1',
+    name: '1',
+    content: 'Tab 1 content',
+  },
+  {
+    title: 'Tab 2',
+    name: '2',
+    content: 'Tab 2 content',
+  },
+])
+
 
 </script>
 

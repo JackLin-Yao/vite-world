@@ -5,17 +5,20 @@ import { defineStore } from 'pinia'
 export const useCollapseStore = defineStore('collapseStore', {
   state: () => {
     return {
-      collapse: false
+      collapse: false,
+      asideWidth: '250px'
     }
   },
   getters: {
     getCollapse(state) {
       return state.collapse
-    }
+    },
+
   },
   actions: {
     setCollapse(collapse) {
       this.collapse = collapse;
-    }
+    },
+
   }
 })

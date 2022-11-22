@@ -1,16 +1,16 @@
 export default [
   {
-    path: 'admin',
+    path: '/admin',
     name: 'admin',
     component: () => import('../../views/role/admin.vue')
   },
   {
-    path: 'user',
+    path: '/user',
     name: 'user',
     component: () => import('../../views/role/user.vue')
   },
   {
-    path: 'role',
+    path: '/role',
     name: 'role',
     component: () => import('../../views/role/role.vue')
   }

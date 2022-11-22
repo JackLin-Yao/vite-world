@@ -7,18 +7,19 @@ import systemRouter from './module/system';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/',
-      name: 'dashboard',
-      component: () => import('@/layout/index.vue'),
-      children: [
-        {
-          path: 'dashboard',
-          redirect: '/',
-          component: () => import('@/views/dashboard/index.vue')
-        }
-      ]
-    },
+    // {
+    //   path: '/',
+    //   redirect: '/dashboard',
+    //   component: () => import('@/layout/index.vue'),
+    //   children: [
+    //     {
+    //       path: '/dashboard',
+    //       name: 'dashboard',
+    //       // redirect: '/',
+    //       component: () => import('@/views/dashboard/index.vue')
+    //     }
+    //   ]
+    // },
     {
       path: '/system',
       name: 'system',
@@ -28,7 +29,7 @@ const router = createRouter({
       ]
     },
     {
-      path: '/role',
+      path: '',
       name: 'role',
       component: () => import('@/layout/index.vue'),
       children: [
