@@ -3,7 +3,7 @@
     <el-icon class="icons" @click="setCollapse">
       <component :is="status ? Fold : Expand" />
     </el-icon>
-    <BreadCrumb></BreadCrumb>
+
   </div>
 
 </template>

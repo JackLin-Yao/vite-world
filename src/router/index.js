@@ -20,7 +20,8 @@ const router = createRouter({
           name: 'dashboard',
           component: () => import('@/views/dashboard/index.vue'),
           meta: {
-            title: '首页'
+            title: '首页',
+            icon: ''
           }
         },
         ...systemRouter

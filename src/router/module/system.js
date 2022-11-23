@@ -4,7 +4,7 @@ export default [
     name: 'system',
     component: () => import('../../views/system/index.vue'),
     meta: {
-      title: '首页'
+      title: '系统设置'
     }
   }
 ]

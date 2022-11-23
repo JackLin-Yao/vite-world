@@ -1,9 +1,21 @@
 <template>
-  <div class="nav-menu" :style="{ width: isCollapse ? '50px' : '250px' }">
+  <div class="nav-menu" :style="{ width: isCollapse ? '64px' : '250px' }">
     <!-- <span class="menu-logo">OA　|　鼎泰高科协同办公 </span> -->
     <el-menu :collapse="isCollapse" :collapse-transition="false" unique-opened :router="true"
       :default-active="activeIndex">
-      <menu-item></menu-item>
+      <el-scrollbar>
+        <el-collapse @change="handleChange">
+          <el-collapse-item title="采购协同" name="1">
+            <menu-item></menu-item>
+          </el-collapse-item>
+          <el-collapse-item title="销售协同" name="2">
+            <menu-item></menu-item>
+          </el-collapse-item>
+          <el-collapse-item title="配置管理" name="3">
+            <menu-item></menu-item>
+          </el-collapse-item>
+        </el-collapse>
+      </el-scrollbar>
     </el-menu>
   </div>
 </template>
@@ -28,6 +40,9 @@ const isCollapse = computed(() => {
   return store.getCollapse;
 })
 
+const handleChange = (e) => {
+  console.log("🚀 ~ file: AdminMenu.vue ~ line 50 ~ handleChange ~ e", e)
+}
 
 </script>
 
@@ -47,6 +62,11 @@ const isCollapse = computed(() => {
       line-height: 25px;
     }
 
+    .el-collapse-item__header {
+      text-align: center;
+      font-size: 99px;
+      white-space: nowrap;
+    }
   }
 }
 </style>

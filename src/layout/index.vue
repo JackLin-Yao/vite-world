@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-aside width="isCollapse ? '50px' : '250px'">
+    <el-aside width="isCollapse ? '64px' : '250px'">
       <AdminMenu />
     </el-aside>
     <el-container>
@@ -19,18 +19,16 @@
 </template>
 
 <script setup>
-import AdminMenu from './components/AdminMenu.vue';
-import AdminHeader from './components/AdminHeader.vue';
-import TagList from './components/TagList.vue';
+import AdminMenu from './components/aside/AdminMenu.vue';
+import AdminHeader from './components/header/AdminHeader.vue';
+import TagList from './components/header/TagList.vue';
 import { computed } from 'vue'
 import { useCollapseStore } from '@/stores/collapse';
 /**
  * 获取store
  */
 const store = useCollapseStore();
-/**
- * 获取collapse
- */
+
 const isCollapse = computed(() => {
   return store.getCollapse;
 })

@@ -17,12 +17,18 @@ route.path
  */
 const getBredcrumb = () => {
   //从路由里面获取所有有meta和title
-  let matched = route.matched.filter((item) => item.meta && item.meta.title);
-  //判断第一个是否是首页,不是，构造一个
-  const first = matched[0];
-  if (first.path !== "/dashboard") {
-    matched = [{ path: "/dashboard", meta: { title: "首页" } }].concat(matched);
+  let matched = route.matched.filter((item) => {
+    return item.meta && item.meta.title
+  })
+  let secondMatched = matched[1];
+  console.log("🚀 ~ file: BreadCrumb.vue ~ line 25 ~ getBredcrumb ~ secondMatched", secondMatched)
+  if (secondMatched == 'dashboard') {
+
+
   }
+
+
+
   tabs.value = matched;
 
 };
